@@ -1,0 +1,1 @@
+https://openweathermap.org/api --> api, darmowe api z danych aktualnych i cos tam..
