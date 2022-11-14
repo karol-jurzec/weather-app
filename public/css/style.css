@@ -20,14 +20,24 @@ body {
     text-align: center;
 }
 
-.title {
+.title-container {
+    display: flex;
+    flex-direction: column;
     color: #F0F0F0;
-    width: 60vw;
+    width: 60vw;   
     text-align: left;
-    padding-left: 30%;
-    line-height: 0em;
-    font-size: 25px;
+    margin-left: 25%;
 }
+
+.title {
+    font-size: 45px;
+}
+
+.subtitle {
+    font-size: 25;
+}
+
+
 
 .search-container {
     width: 50%  ;
@@ -52,7 +62,24 @@ button {
     border: none;
     margin: 1en;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 2.5em;  
+    margin: 1em;
+    bottom: 0;
 }
 
+input {
+    background-color: transparent;
+    border: 1px solid black;
+    width: 60%;
+    padding: 1em;
+    margin: 1em;
+    font-size: 24px;
+}
+
+.desc {
+    text-align: left;
+    font-size: 30px;
+    padding: 0.5em;
+    margin-right: 1em;
+}
