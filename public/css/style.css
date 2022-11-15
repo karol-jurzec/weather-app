@@ -4,11 +4,6 @@ body {
 
 }
 
-svg {
-    size: 100px;
-}
-
-
 .container {
     width: 100vw;
     height: 100vh;
@@ -40,8 +35,6 @@ svg {
 .subtitle {
     font-size: 26px;    
 }
-
-
 
 .search-container {
     width: 50%  ;
