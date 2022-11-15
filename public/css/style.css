@@ -4,6 +4,11 @@ body {
 
 }
 
+svg {
+    size: 100px;
+}
+
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -29,11 +34,11 @@ body {
 }
 
 .title {
-    font-size: 45px;
+    font-size: 56px;
 }
 
 .subtitle {
-    font-size: 25px;    
+    font-size: 26px;    
 }
 
 
@@ -96,8 +101,21 @@ input {
         width: 100%;
     }
 
+    .logo-container {
+        margin-bottom: 15%;
+    }
+
+    .search-container {
+        margin-bottom: 25%;
+    }
+
     form {
         margin: auto;
+    }
+
+    img {
+        height: 10em;
+        margin: 0em;
     }
 
   
