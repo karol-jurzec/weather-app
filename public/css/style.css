@@ -43,21 +43,20 @@ body {
 }
 
 .search-div {
+    display: flex;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 form {
     width: 100%;
-    height: 40vh; 
+    height: 60vh; 
     background-color: #D9D9D9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.25);
-    padding-bottom: 10%;
-    padding-top: 10%;
 }
 
 button {
@@ -82,79 +81,82 @@ input {
 
 .desc {
     text-align: left;
-    font-size: 30px;
+    font-size: 1.5em;
     padding: 0.5em;
     margin-right: 1em;
 }
 
-.city-clouds {
-    display: flex;
-}
-
-.city {
-    width: 70%;
-    text-align: center;
-    padding-bottom: 1em;
-    font-family: 'Inder';
-    font-style: normal;
-    font-size: 50px;
-    line-height: 100%;
-    align-items: center;
-    vertical-align: middle;
-
-    color: #000000;
-}
-
-.clouds {
-    color:#000000;
-    font-size: 120px;
-}
-
-.temperature {
-    display: block;
+.div-cont {
+    height: 100%;
     width: 100%;
-    text-align: center;
-    font-family: 'Inder';
-    font-size: 128px;
-    color: #000000;
-    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.div-cont > button {
+    width: 100%;
+    height: 40%;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #000000;
     
 }
 
-.buttons {
+.temperature-cont {
+    font-size: 15vh;
+    margin: auto;
+}
+
+.div-cont > .localization {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.div-cont > .weather {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.div-cont > .weather > img { 
+    height: 11em;
+}
+
+.div-properties {
+    height: 100%;
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+
+.div-properties > .div-data {
     display: flex;
     width: 100%;
-    position: absolute;
-    bottom: 0px;
-    height: 10vh;
+    height: 20%;
+    font-size: 1.75em;
+    font-weight: 600;
 }
 
-.wind {
-    width: 33%;
+.div-properties > .div-data > .data {
+    width: 50%;
+    text-align: left;
+    margin-left: 10%;
 }
 
-.tommorow {
-    width: 33%;
+.div-properties > .div-data > .value {
+    width: 50%;
+    text-align: right;
+    margin-right: 10%;
 }
 
-.rain {
-    width: 33%;
-}
 
-.main-div {
-    width: 100%;
-    height: 50vh; 
-    background-color: #D9D9D9;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.25);
-    position: relative;
-}
 
-.temperature-container {
-    width: 30%;
-}
 
 
 @media only screen and (max-device-width: 440px) {

@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/afb0712a36.js" crossorigin="anonymous"></script>
     <title>Potato weather</title>
 </head>
 <body>
     <div class="container">
-        <div class="temperature-container">
-                <div class = "main-div">
-                    <div class="city-clouds">
-                        <div class="city">Cracow, Poland</div>
-                        <div class="clouds">
-                            <i class="fa-solid fa-cloud-moon"></i>
+        <div class="search-container">
+            <div class="search-div">
+                <form>
+                    <div class = "div-cont">
+                        <div class="localization">
+                            Poland, Cracow
+                        </div>
+                        <div class="weather">
+                            <img src="public/img/weather-icons/clouds.svg">
                         </div>
                     </div>
-                    <div class="temperature">
-                        34°C
+                    <div class = "div-cont">
+                        <div class="temperature-cont">34°C</div>
                     </div>
-                    <div class="buttons">
-                        <button class="wind">Wind</button>
-                        <button class="rain">Rain</button>
-                        <button class="tommorow">Tommorow</button>
-                    </div> 
-                </div>
+                    <div class = "div-cont">
+                        <button>Tommorow</button>
+                        <button>Rain</button>
+                        <button>Wind</button>
+                    </div>
+                </form>
+            </div>     
         </div>
     </div>
 </body>
