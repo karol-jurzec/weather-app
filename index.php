@@ -13,5 +13,7 @@ Routing::get('weather', 'DefaultController');
 Routing::get('wind', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
+Routing::post('findCity', 'CityController');
+
 
 Routing::run($path);

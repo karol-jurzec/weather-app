@@ -16,7 +16,16 @@
         </div>
         <div class="search-container">
             <div class="search-div">
-                <form>
+                <form class="search" action="findCity" method="POST">
+                    <div class="message">
+                       <?php if(isset($messages)){
+                                foreach ( $messages as $message ) {
+                                    echo $message;
+                                }
+                            } 
+                       ?>
+                    </div>
+
                     <div class="desc">Weather in your city: </div>
                     <input name="city" type="text" placeholder="Search city">
                     <button>Search</button>

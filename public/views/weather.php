@@ -21,7 +21,7 @@
                         <div class="temperature-cont">34°C</div>
                     </div>
                     <div class = "div-cont">
-                        <button>Tommorow</button>
+                        <button>Tomorrow</button>
                         <button>Rain</button>
                         <button>Wind</button>
                     </div>
