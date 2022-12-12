@@ -11,14 +11,17 @@
                 <form>
                     <div class = "div-cont">
                         <div class="localization">
-                            Poland, Cracow
+                            <?= $city->getName()?>, <?= $city->getCountry()?>
                         </div>
                         <div class="weather">
                             <img src="public/img/weather-icons/clouds.svg">
+
                         </div>
                     </div>
                     <div class = "div-cont">
-                        <div class="temperature-cont">34°C</div>
+                        <div class="temperature-cont">
+                            <?= $city->getWeather()->getValue()?>°<?= $city->getWeather()->getScale()?>
+                        </div>
                     </div>
                     <div class = "div-cont">
                         <button>Tomorrow</button>
