@@ -1,34 +1,134 @@
 
 <?php
 
+require_once __DIR__."/../api/converters/TemperatureConverter.php";
+
 class Weather {
-    private $city;
-    private $date;
-    private $value;
-    private $scale;
+    private $main; //rain, wind etc.
     private $rain;
-    private $wind;
+    private $temperature;
+    private $humidity;
+    private $windSpeed;
+    private $windGusts;
+    private $windDegree;
+    private $visibility;
+    private $pressure;
+    private $clouds;
+    private $date;
+    private $icon;
 
-    public function __construct(string $value, string $scale, string $rain, string $wind) {
-        $this->value = $value;
-        $this->scale = $scale;
-        $this->rain =  $rain;
-        $this->wind = $wind;
+
+    public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date )
+    {
+        $this->main = $main;
+        $this->rain = $rain;
+        $this->temperature = $temperature;
+        $this->humidity = $humidity;
+        $this->windSpeed = $windSpeed;
+        $this->windGusts = $windGusts;
+        $this->windDegree = $windDegree;
+        $this->visibility = $visibility;
+        $this->pressure = $pressure;
+        $this->clouds = $clouds;
+        $this->date = $date;
     }
 
-    public function getValue() : string {
-        return $this->value;
+    public function getIcon() {
+        return $this->icon;
     }
 
-    public  function setValue( string $value ) {
-        $this->value = $value;
+    public function setIcon($icon) {
+        $this->icon = $icon;
     }
 
-    public function  getScale() : string {
-        return $this->scale;
+    public function getMain() {
+        return $this->main;
     }
 
-    public function setScale(string $scale) {
-        $this->scale= $scale;
+    public function setMain($main) {
+        $this->main = $main;
     }
+
+    public function getRain() {
+        return $this->rain;
+    }
+
+    public function setRain($rain) {
+        $this->rain = $rain;
+    }
+
+    public function getTemperature() {
+        return $this->temperature;
+    }
+
+    public function setTemperature($temperature) {
+        $this->temperature = $temperature;
+    }
+
+    public function getHumidity() {
+        return $this->humidity;
+    }
+
+    public function setHumidity($humidity) {
+        $this->humidity = $humidity;
+    }
+
+    public function getWindSpeed() {
+        return $this->windSpeed;
+    }
+
+    public function setWindSpeed($windSpeed) {
+        $this->windSpeed = $windSpeed;
+    }
+
+    public function getWindGusts() {
+        return $this->windGusts;
+    }
+
+    public function setWindGusts($windGusts) {
+        $this->windGusts = $windGusts;
+    }
+
+    public function getWindDegree() {
+        return $this->windDegree;
+    }
+
+    public function setWindDegree($windDegree) {
+        $this->windDegree = $windDegree;
+    }
+
+    public function getVisibility() {
+        return $this->visibility;
+    }
+
+    public function setVisibility($visibility) {
+        $this->visibility = $visibility;
+    }
+
+    public function getPressure() {
+        return $this->pressure;
+    }
+
+    public function setPressure($pressure) {
+        $this->pressure = $pressure;
+    }
+
+    public function getClouds() {
+        return $this->clouds;
+    }
+
+    public function setClouds($clouds) {
+        $this->clouds = $clouds;
+    }
+
+    public function getDate() {
+        return $this->date;
+    }
+
+    public function setDate($date) {
+        $this->date = $date;
+    }
+
+
+
 }

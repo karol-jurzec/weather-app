@@ -14,13 +14,14 @@
                             <?= $city->getName()?>, <?= $city->getCountry()?>
                         </div>
                         <div class="weather">
+                            <!--Tutaj ikona wczytana z klasy!!-->
                             <img src="public/img/weather-icons/clouds.svg">
 
                         </div>
                     </div>
                     <div class = "div-cont">
                         <div class="temperature-cont">
-                            <?= $city->getWeather()->getValue()?>°<?= $city->getWeather()->getScale()?>
+                            <?= $weather->getTemperature()?>°C
                         </div>
                     </div>
                     <div class = "div-cont">

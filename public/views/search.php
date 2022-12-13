@@ -16,7 +16,7 @@
         </div>
         <div class="search-container">
             <div class="search-div">
-                <form class="search" action="findCity" method="POST">
+                <form class="search" action="find" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){
                                 foreach ( $messages as $message ) {
