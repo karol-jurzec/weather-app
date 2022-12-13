@@ -2,6 +2,8 @@
 <?php
 
 class Weather {
+    private $city;
+    private $date;
     private $value;
     private $scale;
     private $rain;
