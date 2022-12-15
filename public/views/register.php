@@ -5,18 +5,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <div class="logo">
-                <img src="public/img/logo.svg">
-            </div>
-            <div class="title-container">
-                <div class="title">Potato Weather</div>
-                <div class="sub-title">Check weather in your city</div>
-            </div>
-        </div>
         <div class="search-container">
             <div class="search-div">
-                <form class="login" action="login" method="POST">
+                <form class="register" action="login" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){
                                 foreach ( $messages as $message ) {
@@ -27,8 +18,11 @@
                     </div>
                     <input name="email" type="text" placeholder="email@email.com">
                     <input name="password" type="password" placeholder="password">
-                    <button type="submit">LOGIN</button>
-                    <a class="register-href" href="register">Sign up</a>
+                    <input name="confirmedPassword" type="password" placeholder="confirm password">
+                    <input name="name" type="text" placeholder="name">
+                    <input name="surname" type="text" placeholder="surname">
+                    <input name="phone" type="text" placeholder="phone">
+                    <button type="submit">Register</button>
                 </form>
             </div>     
         </div>

@@ -48,7 +48,7 @@ body {
     margin-right: 10%;
 }
 
-form {
+.main, .search, .login, .register {
     width: 100%;
     height: 60vh; 
     background-color: #D9D9D9;
@@ -63,7 +63,6 @@ button {
     background: rgba(188, 167, 156, 0.7);
     width: 50%;
     border: none;
-    margin: 1en;
     color: #FFFFFF;
     font-size: 20px;
     line-height: 2.5em;  
@@ -101,8 +100,8 @@ input {
     margin: auto;
     margin-left: 10px;
     margin-right: 10px;
-    border: 1px solid #000000;
-    
+    box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 .temperature-cont {
@@ -131,28 +130,86 @@ input {
 .div-properties {
     height: 100%;
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-.div-properties > .div-data {
-    display: flex;
-    width: 100%;
-    height: 20%;
-    font-size: 1.75em;
-    font-weight: 600;
-}
-
-.div-properties > .div-data > .data {
+.property-column {
     width: 50%;
     text-align: left;
+}
+
+.div-properties > .property-column > .div-data {
+    display: flex;
+    width: 100%;
+    height: 18%;
+    font-size: 1.5em;
+    font-weight: 550;
     margin-left: 10%;
 }
 
-.div-properties > .div-data > .value {
-    width: 50%;
-    text-align: right;
-    margin-right: 10%;
+.register-href {
+    padding-top: 10px;
+    color: #000000;
+    font-size: 1.15em;
+    text-underline-mode: off;
+}
+
+.user-panel {
+    width: 100%;
+    height: 7.5vh;
+    background-color: #D9D9D9;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+}
+
+.user-panel > .history {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.user-panel >.history >.history-weather {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    margin: auto;
+    border-right: 0.5px solid grey;
+    padding-left: 8px;
+    font-size: 20px;
+}
+
+.user-panel >.history >.history-weather > img {
+    height: 20px;
+    margin-right: 2px;
+}
+
+.user-panel > .loged-user {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+    font-size: 20px;
+}
+
+.user-panel > .loged-user > img{
+    height: 30px;
+    width: 20%;
+    margin: auto;
+}
+
+.user-panel > .loged-user > .user-info {
+    width: 80%;
+}
+
+.user-panel > .loged-user > .user-info > .logout > a {
+    color: black;
+    font-size: 15px;
 }
 
 

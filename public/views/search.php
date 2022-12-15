@@ -5,6 +5,33 @@
 </head>
 <body>
     <div class="container">
+        <div class="user-panel">
+            <div class="history">
+                <div class="history-weather">
+                    <img src="/public/img/weather-icons/clouds.svg">
+                     34 Cracow, Poland
+                </div>
+                <div class="history-weather">
+                    <img src="/public/img/weather-icons/clouds.svg">
+                     25 Cracow, Poland
+                </div>
+                <div class="history-weather">
+                    <img src="/public/img/weather-icons/clouds.svg">
+                     21 Cracow, Poland
+                </div>
+                <div class="history-weather">
+                    <img src="/public/img/weather-icons/clouds.svg">
+                     22 Cracow, Poland
+                </div>
+            </div>
+            <div class="loged-user">
+                <img src="/public/img/user.svg">
+                <div class="user-info">
+                    <div class="email">test@gmail.com</div>
+                    <div class="logout"><a href="login">Sign out</a> </div>
+                </div>
+            </div>
+        </div>
         <div class="logo-container">
             <div class="logo">
                 <img src="public/img/logo.svg">
@@ -25,10 +52,9 @@
                             } 
                        ?>
                     </div>
-
                     <div class="desc">Weather in your city: </div>
                     <input name="city" type="text" placeholder="Search city">
-                    <button>Search</button>
+                    <button type="submit">Search</button>
                 </form>
             </div>     
         </div>

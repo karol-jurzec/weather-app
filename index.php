@@ -5,15 +5,12 @@ require "Routing.php";
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
-Routing::get('index', 'DefaultController');
-Routing::get('search', 'DefaultController');
-Routing::get('rain', 'DefaultController');
-Routing::get('tomorrow', 'DefaultController');
-Routing::get('weather', 'DefaultController');
-Routing::get('wind', 'DefaultController');
+Routing::get('', 'DefaultController');
+Routing::get('register', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
-Routing::post('find', 'CityController');
-
+Routing::post('register', 'SecurityController');
+Routing::post('find', 'SearchController');
+Routing::post('check', 'WeatherController');
 
 Routing::run($path);

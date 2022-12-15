@@ -2,7 +2,7 @@
 
 class WeatherParser {
     public static function ToWeather($resp) : Weather {
-        $main = $resp['weather'][0]['main'];
+        $main = strtolower($resp['weather'][0]['main']);
         $rain = $resp['rain'];
         $temperature =  (int)$resp['main']['temp'];
         $humidity = $resp['main']['humidity'];

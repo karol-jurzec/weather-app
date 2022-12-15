@@ -1,8 +1,6 @@
 
 <?php
 
-require_once __DIR__."/../api/converters/TemperatureConverter.php";
-
 class Weather {
     private $main; //rain, wind etc.
     private $rain;

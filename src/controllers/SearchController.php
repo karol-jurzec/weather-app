@@ -5,7 +5,7 @@ require_once __DIR__.'/../api/WeatherApiController.php';
 require_once __DIR__.'/../models/City.php';
 require_once __DIR__.'/../models/Weather.php';
 
-class CityController extends AppController {
+class SearchController extends AppController {
     private $messages = [];
     public function find() {
         if($this->isPost()) {
