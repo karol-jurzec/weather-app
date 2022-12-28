@@ -7,6 +7,7 @@ require_once __DIR__.'/../models/City.php';
 require_once __DIR__.'/../models/Weather.php';
 require_once __DIR__.'/../models/User.php';
 
+
 class WeatherController extends AppController {
     private $message = [];
     private $weatherRepository;
@@ -18,8 +19,8 @@ class WeatherController extends AppController {
 
     public function find() {
         if($this->isPost()) {
-
             $cityName = $_POST['city'];
+
             //TODO get country name
             $city = new City($cityName, 'Poland');
             $currWeather = WeatherApiController::getCurrentWeatherFromLocation($city);

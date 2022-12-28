@@ -16,6 +16,7 @@ class Routing {
     }
 
     public static function run($url) {
+
         $urlParts = explode("/", $url);
         $action = $urlParts[0];
 

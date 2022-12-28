@@ -1,4 +1,3 @@
-
 <?php
 
 class AppController {
@@ -19,16 +18,16 @@ class AppController {
 
     protected function render(string $template = null, array $variables = []) {
         $templatePath = 'public/views/'.$template.'.php';
-        $outpupt = 'file not found';
+        $output = 'file not found';
 
         if(file_exists($templatePath)) {
             extract($variables);
 
             ob_start();
             include $templatePath;
-            $outpupt = ob_get_clean();
+            $output = ob_get_clean();
         }
 
-        print $outpupt;
+        print $output;
     }
 }

@@ -37,8 +37,7 @@ class UserRepository extends Repository {
         return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
     }
 
-    public function addUser(User $user)
-    {
+    public function addUser(User $user) {
         $stmt = self::getInstance()->connect()->prepare('
             INSERT INTO users_details (name, surname, phone)
             VALUES (?, ?, ?)
@@ -51,7 +50,7 @@ class UserRepository extends Repository {
         ]);
 
         $stmt = self::getInstance()->connect()->prepare('
-            INSERT INTO users (email, password, id_user_details)
+            INSERT INTO users (email, password, user_details_id)
             VALUES (?, ?, ?)
         ');
 
@@ -76,6 +75,6 @@ class UserRepository extends Repository {
         $stmt->execute();
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data['id'];
+        return $data['user_details_id'];
     }
 }

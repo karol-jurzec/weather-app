@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>Potato weather</title>
 </head>
 <body>
     <div class="container">
         <div class="search-container">
             <div class="search-div">
-                <form class="register" action="login" method="POST">
+                <form class="register" action="register" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){
                                 foreach ( $messages as $message ) {

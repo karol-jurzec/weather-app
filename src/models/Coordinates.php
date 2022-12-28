@@ -1,5 +1,4 @@
 <?php
-
 class Coordinates {
     private $latitude;
     private $longitude;

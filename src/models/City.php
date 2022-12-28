@@ -20,5 +20,4 @@ class City {
     public function getCountry() : string {
         return $this->country;
     }
-
 }

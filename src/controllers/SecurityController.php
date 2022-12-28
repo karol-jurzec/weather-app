@@ -13,11 +13,12 @@ class SecurityController extends AppController {
     }
 
     public function login() {
+        session_start();
 
         if( $this->isGet() ) {
             return $this->render('login');
         }
-        
+
         $email = $_POST["email"];
         $password = $_POST["password"];
 
@@ -31,11 +32,17 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['User with this email not exist.']]);
         }
 
-        if ($user-> getPassword() !== $password) {
+        if ( !password_verify($password, $user-> getPassword()) ) {
             return $this->render('login', ['messages' => ['Wrong password.']]);
         }
 
+        $_SESSION['user_id'] = $this->userRepository->getUserId($email);
+
         return $this->render('search');
+    }
+
+    public function logout() {
+        echo siema;
     }
 
     public function register()
@@ -55,8 +62,7 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User($email, password_hash($password, PASSWORD_DEFAULT), $name, $surname);
         $user->setPhone($phone);
 
         $this->userRepository->addUser($user);
