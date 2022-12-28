@@ -10,7 +10,7 @@ Routing::get('register', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
-Routing::post('find', 'SearchController');
+Routing::post('find', 'WeatherController');
 Routing::post('check', 'WeatherController');
 
 Routing::run($path);

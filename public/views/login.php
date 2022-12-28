@@ -16,6 +16,7 @@
         </div>
         <div class="search-container">
             <div class="search-div">
+
                 <form class="login" action="login" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){

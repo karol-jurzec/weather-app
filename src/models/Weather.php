@@ -16,8 +16,7 @@ class Weather {
     private $icon;
 
 
-    public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date )
-    {
+    public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date ) {
         $this->main = $main;
         $this->rain = $rain;
         $this->temperature = $temperature;
