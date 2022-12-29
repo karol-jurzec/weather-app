@@ -1,6 +1,4 @@
-
 <?php
-
 class Weather {
     private $main; //rain, wind etc.
     private $rain;
@@ -14,9 +12,9 @@ class Weather {
     private $clouds;
     private $date;
     private $icon;
+    private $id;
 
-
-    public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date ) {
+    public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date, $id = null) {
         $this->main = $main;
         $this->rain = $rain;
         $this->temperature = $temperature;
@@ -126,6 +124,11 @@ class Weather {
         $this->date = $date;
     }
 
+    public function setId(int $id) {
+        $this->id = $id;
+    }
 
-
+    public function getId(): int {
+        return $this->id;
+    }
 }

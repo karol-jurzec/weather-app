@@ -38,23 +38,23 @@ class WeatherRepository extends Repository {
         $result = [];
 
         $stmt = self::getInstance()->connect()->prepare('
-           select temperature, wind_speed, pressure, humidity, rain, city_name, country 
+           select weather_id, date, temperature, main, wind_speed, pressure, humidity, rain, city_name, country 
            from weather_histories wh
                join weathers w on wh.weahter_id = w.weather_id
                join weathers_details wd on w.weather_details_id = wd.weather_details_id
                join cities c on c.city_id = w.city_id
            where user_id = :id
-           order by search_date desc limit 5; 
+           order by search_date desc limit 4 
         ');
 
         $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
-        $weathers = $stmt->fetch(PDO::FETCH_ASSOC);
+        $weathers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($weathers as $weather) {
-            $result = array_push($result, [ new Weather(
-                "null",
+            $result[] = array(new Weather(
+                $weather['main'],
                 $weather['rain'],
                 $weather['temperature'],
                 $weather['humididty'],
@@ -64,11 +64,12 @@ class WeatherRepository extends Repository {
                 "null",
                 $weather['pressure'],
                 "null",
-                $weather['date']
+                $weather['date'],
+                $weather['id']
             ), new City(
                 $weather['city_name'],
                 $weather['country']
-            )]);
+            ));
         }
 
         return $result;
@@ -78,6 +79,7 @@ class WeatherRepository extends Repository {
         $userId = $_SESSION['user_id'];
         $cityName = $city->getName();
         $country = $city->getCountry();
+        $main = $weather->getMain();
         $date = date('Y/m/d H:i:s', $weather->getDate());
         $temperature = $weather->getTemperature();
         $windSpeed = $weather->getWindSpeed();
@@ -86,12 +88,13 @@ class WeatherRepository extends Repository {
         $rain = !$weather->getRain()? 0 : !$weather->getRain();
 
         $stmt = self::getInstance()->connect()->prepare('
-            SELECT add_weather(:user_id, :city_name, :country, :date, :temperature, :wind_speed, :pressure, :humidity, :rain) 
+            SELECT add_weather(:user_id, :city_name, :country, :main, :date, :temperature, :wind_speed, :pressure, :humidity, :rain) 
         ');
 
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->bindParam(':city_name', $cityName, PDO::PARAM_STR);
         $stmt->bindParam(':country', $country, PDO::PARAM_STR);
+        $stmt->bindParam(':main', $main, PDO::PARAM_STR);
         $stmt->bindParam(':date', $date, PDO::PARAM_STR);
         $stmt->bindParam(':temperature', $temperature, PDO::PARAM_STR);
         $stmt->bindParam(':wind_speed', $windSpeed, PDO::PARAM_STR);

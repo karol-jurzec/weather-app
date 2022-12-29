@@ -27,7 +27,7 @@
                     </div>
                     <input name="email" type="text" placeholder="email@email.com">
                     <input name="password" type="password" placeholder="password">
-                    <button type="submit">LOGIN</button>
+                    <button class="button-el" type="submit">LOGIN</button>
                     <a class="register-href" href="register">Sign up</a>
                 </form>
             </div>     

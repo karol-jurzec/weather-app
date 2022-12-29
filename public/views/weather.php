@@ -54,8 +54,8 @@
                     <input type="hidden" name="cityName" value=<?= $city->getName()?>>
                     <input type="hidden" name="cityCountry" value=<?= $city->getCountry()?>>
                     <div class = "div-cont">
-                        <button type="submit" name="details">Check details</button>
-                        <button type="submit" name="tomorrow">Check forecast for tomorrow</button>
+                        <button class="button-el" type="submit" name="details">Check details</button>
+                        <button class="button-el" type="submit" name="tomorrow">Check forecast for tomorrow</button>
                     </div>
                 </form>
             </div>     

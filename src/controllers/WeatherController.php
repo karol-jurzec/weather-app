@@ -17,7 +17,13 @@ class WeatherController extends AppController {
         $this->weatherRepository = new WeatherRepository();
     }
 
-    public function find() {
+    public function weather() {
+        $userId = $_SESSION['user_id'];
+        $weathers = $this->weatherRepository->getWeathers($userId);
+        $this->render('search', ['weathers' => $weathers]);
+    }
+
+    public function search() {
         if($this->isPost()) {
             $cityName = $_POST['city'];
 

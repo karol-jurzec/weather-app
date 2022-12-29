@@ -23,7 +23,7 @@
                     <input name="name" type="text" placeholder="name">
                     <input name="surname" type="text" placeholder="surname">
                     <input name="phone" type="text" placeholder="phone">
-                    <button type="submit">Register</button>
+                    <button class="button-el" type="submit">Register</button>
                 </form>
             </div>     
         </div>

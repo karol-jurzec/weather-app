@@ -38,11 +38,17 @@ class SecurityController extends AppController {
 
         $_SESSION['user_id'] = $this->userRepository->getUserId($email);
 
-        return $this->render('search');
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/weather");
     }
 
     public function logout() {
-        echo siema;
+        session_destroy();
+
+        echo $_SESSION['user_id'];
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/");
     }
 
     public function register()

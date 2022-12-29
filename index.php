@@ -13,7 +13,8 @@ Routing::get('register', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 Routing::post('register', 'SecurityController');
-Routing::post('find', 'WeatherController');
+Routing::post('weather', 'WeatherController');
+Routing::post('search', 'WeatherController');
 Routing::post('check', 'WeatherController');
 
 Routing::run($path);
