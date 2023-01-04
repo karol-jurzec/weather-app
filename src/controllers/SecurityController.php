@@ -45,7 +45,6 @@ class SecurityController extends AppController {
     public function logout() {
         session_destroy();
 
-        echo $_SESSION['user_id'];
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/");

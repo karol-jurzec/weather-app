@@ -7,10 +7,10 @@
 <div class="container">
     <div class="user-panel">
         <div class="history">
-            <?php var_dump($weathers) ?>
             <?php foreach ($weathers as $weather): ?>
-                <div id="<?= $weather[0]['id']; ?>" class="history-weather">
+                <div id="<?= $weather[0]->getTemperature(); ?>" class="history-weather">
                     <img src="/public/img/weather-icons/clouds.svg">
+                    <?= $weather[0]->getTemperature(); ?>° <?= $weather[1]->getName(); ?>, <?= $weather[1]->getCountry(); ?>
                 </div>
             <?php endforeach; ?>
         </div>
