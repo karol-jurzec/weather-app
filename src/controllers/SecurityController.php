@@ -37,6 +37,7 @@ class SecurityController extends AppController {
         }
 
         $_SESSION['user_id'] = $this->userRepository->getUserId($email);
+        $_SESSION['email'] = $email;
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/weather");

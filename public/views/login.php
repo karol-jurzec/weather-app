@@ -14,8 +14,8 @@
                 <div class="sub-title">Check weather in your city</div>
             </div>
         </div>
-        <div class="search-container">
-            <div class="search-div">
+        <div class="main-container">
+            <div class="main-div">
                 <form class="login" action="login" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){
@@ -30,7 +30,7 @@
                     <button class="button-el" type="submit">LOGIN</button>
                     <a class="register-href" href="register">Sign up</a>
                 </form>
-            </div>     
+            </div>
         </div>
     </div>
 </body>

@@ -8,7 +8,7 @@
     <div class="user-panel">
         <div class="history">
             <?php foreach ($weathers as $weather): ?>
-                <div id="<?= $weather[0]->getTemperature(); ?>" class="history-weather">
+                <div id="<?= $weather[0]->getId(); ?>" class="history-weather">
                     <img src="/public/img/weather-icons/clouds.svg">
                     <?= $weather[0]->getTemperature(); ?>° <?= $weather[1]->getName(); ?>, <?= $weather[1]->getCountry(); ?>
                 </div>
@@ -33,15 +33,15 @@
             <div class="sub-title">Check weather in your city</div>
         </div>
     </div>
-    <div class="search-container">
-        <div class="search-div">
+    <div class="main-container">
+        <div class="main-div">
             <form class="search" action="search" method="POST">
                 <div class="message">
                     <?php if(isset($messages)){
                         foreach ( $messages as $message ) {
-                            echo $message;
+                                echo $message;
+                            }
                         }
-                    }
                     ?>
                 </div>
                 <div class="desc">Weather in your city: </div>

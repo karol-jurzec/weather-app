@@ -9,22 +9,12 @@
     <div class="container">
         <div class="user-panel">
             <div class="history">
-                <div class="history-weather">
-                    <img src="/public/img/weather-icons/clouds.svg">
-                    34 Cracow, Poland
-                </div>
-                <div class="history-weather">
-                    <img src="/public/img/weather-icons/clouds.svg">
-                    25 Cracow, Poland
-                </div>
-                <div class="history-weather">
-                    <img src="/public/img/weather-icons/clouds.svg">
-                    21 Cracow, Poland
-                </div>
-                <div class="history-weather">
-                    <img src="/public/img/weather-icons/clouds.svg">
-                    22 Cracow, Poland
-                </div>
+                <?php foreach ($weathers as $city_weather): ?>
+                    <div id="<?= $city_weather[0]->getId(); ?>" class="history-weather">
+                        <img src="/public/img/weather-icons/clouds.svg">
+                        <?= $city_weather[0]->getTemperature(); ?>° <?= $city_weather[1]->getName(); ?>, <?= $city_weather[1]->getCountry(); ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="loged-user">
                 <img src="/public/img/user.svg">
@@ -34,8 +24,8 @@
                 </div>
             </div>
         </div>
-        <div class="search-container">
-            <div class="search-div">
+        <div class="main-container">
+            <div class="main-div">
                 <form class="main">
                     <div class = "div-cont">
                         <div class="localization">
@@ -67,16 +57,16 @@
                         </div>
                         <div class="property-column">
                             <div class="div-data">
-                                Visibility: 16km/h
+                                Visibility: <?= $weather->getVisibility()?>
                             </div>
                             <div class="div-data">
-                                Wind: W 7km/h
+                                Wind: <?= $weather->getVisibility()?>
                             </div>
                             <div class="div-data">
-                                Visibility: 16km/h
+                                Visibility: <?= $weather->getVisibility()?>
                             </div>
                             <div class="div-data">
-                                Visibility: 16km/h
+                                Visibility:<?= $weather->getVisibility()?>
                             </div>
                         </div>
                     </div>

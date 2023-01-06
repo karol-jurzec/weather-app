@@ -26,6 +26,7 @@ class Weather {
         $this->pressure = $pressure;
         $this->clouds = $clouds;
         $this->date = $date;
+        $this->id = $id;
     }
 
     public function getIcon() {

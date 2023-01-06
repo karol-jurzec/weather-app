@@ -50,6 +50,7 @@ class WeatherRepository extends Repository {
         $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
+
         $weathers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($weathers as $weather) {
@@ -65,7 +66,7 @@ class WeatherRepository extends Repository {
                 $weather['pressure'],
                 "null",
                 $weather['date'],
-                $weather['id']
+                $weather['weather_id']
             ), new City(
                 $weather['city_name'],
                 $weather['country']

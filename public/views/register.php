@@ -6,8 +6,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="search-container">
-            <div class="search-div">
+        <div class="main-container">
+            <div class="main-div">
                 <form class="register" action="register" method="POST">
                     <div class="message">
                        <?php if(isset($messages)){
