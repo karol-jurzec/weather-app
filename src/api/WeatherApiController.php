@@ -22,9 +22,8 @@ class WeatherApiController {
         return $resp;
     }
 
-    private static function getCityCoordinates(City $city) : Coordinates
-    {
-        $url = 'api.openweathermap.org/geo/1.0/direct?q=' . $city->getName() . ',' . $city->getCountry() . '&limit=1&appid=' . self::API_TOKEN . "&units=metric";
+    private static function getCityCoordinates(City $city) : Coordinates {
+        $url = 'api.openweathermap.org/geo/1.0/direct?q=' . $city->getName() . '&limit=1&appid=' . self::API_TOKEN . "&units=metric";
 
         $resp = self::callRequest($url);
 
@@ -34,8 +33,7 @@ class WeatherApiController {
         return new Coordinates($latitude, $longitude);
     }
 
-    public static function getCurrentWeatherFromLocation(City $city) : Weather
-    {
+    public static function getCurrentWeatherFromLocation(City $city) : Weather {
         $coordinates = self::getCityCoordinates($city);
         $url = 'api.openweathermap.org/data/2.5/weather?lat=' . $coordinates->getLatitude() . '&lon=' . $coordinates->getLongitude() . '&appid=' . self::API_TOKEN . '&units=metric';
         $resp = self::callRequest($url);

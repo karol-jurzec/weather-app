@@ -39,7 +39,13 @@ class SecurityController extends AppController {
         $_SESSION['user_id'] = $this->userRepository->getUserId($email);
         $_SESSION['email'] = $email;
 
+
         $url = "http://$_SERVER[HTTP_HOST]";
+
+        if ( $user->getIsAdmin() === true ) {
+            header("Location: {$url}/admin");
+        }
+
         header("Location: {$url}/weather");
     }
 

@@ -6,12 +6,14 @@ class User {
     private $name;
     private $surname;
     private $phone;
+    private $is_admin;
 
-    public function __construct(string $email, string $password, string $name, string $surname) {
+    public function __construct(string $email, string $password, string $name, string $surname, bool $is_admin) {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->is_admin = $is_admin;
     }
 
     public function setEmail(string $email) {
@@ -52,5 +54,9 @@ class User {
 
     public function getPhone() : string {
         return $this->phone;
+    }
+
+    public function getIsAdmin() : bool {
+        return $this->is_admin;
     }
 }

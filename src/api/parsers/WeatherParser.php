@@ -16,7 +16,8 @@ class WeatherParser {
         $clouds = $resp['clouds']['all'];
         $date = $resp['dt'];
 
-        return new Weather(
+        return
+            new Weather(
             $main,
             $rain,
             $temperature,

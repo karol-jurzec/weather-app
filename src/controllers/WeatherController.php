@@ -25,40 +25,22 @@ class WeatherController extends AppController {
 
     public function search() {
         if($this->isPost()) {
-            $cityName = $_POST['city'];
+
+            $city = $_POST['city'];
             $userId = $_SESSION['user_id'];
 
             //TODO get country name
-            $city = new City($cityName, 'Poland');
-            $currWeather = WeatherApiController::getCurrentWeatherFromLocation($city);
-            $this->weatherRepository->addWeather($currWeather, $city);
+            $city = new City($city, '');
+            $today= WeatherApiController::getCurrentWeatherFromLocation($city);
+            $tomorrow= WeatherApiController::getNextDayWeatherFromLocation($city);
             $weathers = $this->weatherRepository->getWeathers($userId);
+            $this->weatherRepository->addWeather($today, $city);
 
-            return $this->render('weather', ['messages' => $this->messages, 'city' => $city, 'weather' => $currWeather, 'weathers' => $weathers]);
+            return $this->render('weather', ['messages' => $this->messages, 'city' => $city,
+                'weather' => $today, 'weathers' => $weathers, 'tomorrow' => $tomorrow]);
         }
 
         $this->render('search', ['messages' => $this->messages]);
     }
 
-    public function check() {
-        if($this->isPost()) {
-            $userId = $_SESSION['user_id'];
-
-            $city = new City( $_POST['cityName'], $_POST['cityCountry']);
-            $weather = WeatherApiController::getCurrentWeatherFromLocation($city);
-            $weathers = $this->weatherRepository->getWeathers($userId);
-
-            if(isset($_POST['tomorrow'])) {
-                $weather = WeatherApiController::getNextDayWeatherFromLocation($city);
-                return $this->render('tomorrow', ['messages' => $this->messages, 'city' => $city, 'weather' => $weather, 'weathers' => $weathers]);
-            }
-            else if(isset($_POST['details'])) {
-                return $this->render('details', ['messages' => $this->messages, 'city' => $city, 'weather' => $weather, 'weathers' => $weathers]);
-            }
-
-            return $this->render('weather', ['messages' => $this->messages, 'city' => $city, 'weather' => $weather]);
-        }
-
-        $this->render('weather', ['messages' => $this->messages]);
-    }
 }

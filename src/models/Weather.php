@@ -12,6 +12,7 @@ class Weather {
     private $clouds;
     private $date;
     private $icon;
+
     private $id;
 
     public function __construct( $main, $rain, $temperature, $humidity, $windSpeed, $windGusts, $windDegree, $visibility, $pressure, $clouds, $date, $id = null) {

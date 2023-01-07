@@ -22,7 +22,8 @@ class UserRepository extends Repository {
             $user['email'],
             $user['password'],
             $user['name'],
-            $user['surname']
+            $user['surname'],
+            $user['is_admin']
         );
     }
 
@@ -50,14 +51,15 @@ class UserRepository extends Repository {
         ]);
 
         $stmt = self::getInstance()->connect()->prepare('
-            INSERT INTO users (email, password, user_details_id)
-            VALUES (?, ?, ?)
+            INSERT INTO users (email, password, user_details_id, is_admin)
+            VALUES (?, ?, ?, ?)
         ');
 
         $stmt->execute([
             $user->getEmail(),
             $user->getPassword(),
-            $this->getUserDetailsId($user)
+            $this->getUserDetailsId($user),
+            'false'
         ]);
     }
 
